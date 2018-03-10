@@ -56,15 +56,6 @@ class ViewPost{
 	}
         
         
-        
-        
-        
-        
-        public function db_close() {
-            mysqli_close($this->db);
-        }
-
 
 	
 }
- ?>

@@ -1,17 +1,17 @@
 <?PHP
-    include './custom_assets/classes/view_post.php';
-    
+   include './custom_assets/classes/view_post.php';
+   
     $category=new ViewPost();
-    
+   
     $data=$category->category_view();
-
+   
 ?> 
 
 
 <!-- Preloader Start -->
-    <div id="preloader">
+<!--    <div id="preloader">
         <div class="yummy-load"></div>
-    </div>
+    </div>-->
 
   
 
@@ -71,7 +71,7 @@
                         <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
                             <ul class="navbar-nav" id="yummy-nav">
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="index.php">হোম <span class="sr-only">(current)</span></a>
+                                    <a class="nav-link" href="index">হোম <span class="sr-only">(current)</span></a>
                                 </li>
                                 
                                
@@ -83,9 +83,9 @@
                                         while ($row= mysqli_fetch_array($data)){  
                                             
                                         ?>
-                                        <a class="dropdown-item" href="category_post_list.php?id=<?PHP echo $row['cat_id']?>&&cat_name=<?PHP echo $row['cat_name'] ?>"><?PHP echo $row['cat_name'] ?></a>
+                                        <a class="dropdown-item" href="category_post_list?id=<?PHP echo $row['cat_id']?>&&cat_name=<?PHP echo $row['cat_name'] ?>"><?PHP echo $row['cat_name'] ?></a>
                                         <?PHP  }
-                                        $category->db_close();
+                                       
                                         ?>
                                     </div>
                                 </li>
@@ -93,10 +93,10 @@
                                     <a class="nav-link" href="all_post.php">সকল পোস্ট</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#">আমাদের সম্পর্কে</a>
+                                    <a class="nav-link" href="programming">প্রোগ্রামিং </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.php">যোগাযোগ করুন</a>
+                                    <a class="nav-link" href="contact">যোগাযোগ করুন</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="http://7unity.com/tv/">লাইভ টিভি</a>

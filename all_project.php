@@ -1,19 +1,50 @@
+
 <?PHP include('top_header.php'); ?>
 
 <body>
-   <?PHP include('header_index.php'); ?>
+   <?PHP //include('header.php'); ?>
     <!-- ****** Header Area End ****** -->
+ <!-- ****** Breadcumb Area Start ****** -->
+    <div class="breadcumb-area" style="background-image: url(img/catagory-img/sw.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="bradcumb-title text-center">
+                        <h2>Software Project</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-    <!-- ****** Welcome Post Area Start ****** -->
-    <?PHP include('recent_post.php') ?>
-    <!-- ****** Welcome Area End ****** -->
 
-    <!-- ****** Categories Area Start ****** -->
-    <?PHP include('category_post.php') ?>
+    <div class="breadcumb-nav">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.php"><i class="fa fa-home" aria-hidden="true"></i> হোম</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a>Software Project</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ****** Breadcumb Area End ****** -->
+ <!-- ****** Categories Area Start ****** -->
+    <?PHP //include('category_progarmming.php') 
+    include('./custom_assets/classes/view_programming_post.php');
+
+    $programming_post=new Project();
+    $data=$programming_post->project_view();
+
+
+    ?>
     <!-- ****** Categories Area End ****** -->
-
-    <!-- ****** Blog Area Start ****** -->
-    <section class="blog_area section_padding_0_80">
+  
+ <section class="blog_area section_padding_0_80">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
@@ -23,61 +54,59 @@
                         <div class="col-12">
                             <div class="single-post wow fadeInUp" data-wow-delay=".2s">
                                 <!-- Post Thumb -->
-                                <div class="post-thumb">
-                                    <img src="img/blog-img/1.jpg" alt="">
-                                </div>
+                                <hr>
+                                <h1 style="font-family: verdana;color: green;text-align: center">P R O J E C T</h1>
+                                <hr>
                                 <!-- Post Content -->
                                 <div class="post-content">
                                     <div class="post-meta d-flex">
                                         <div class="post-author-date-area d-flex">
                                             <!-- Post Author -->
-                                            <div class="post-author">
-                                                <a href="#">By Marian</a>
-                                            </div>
+                                            
                                             <!-- Post Date -->
-                                            <div class="post-date">
-                                                <a href="#">May 19, 2017</a>
-                                            </div>
+                                            
                                         </div>
                                         <!-- Post Comment & Share Area -->
                                         <div class="post-comment-share-area d-flex">
                                             <!-- Post Favourite -->
-                                            <div class="post-favourite">
+<!--                                            <div class="post-favourite">
                                                 <a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i> 10</a>
                                             </div>
-                                            <!-- Post Comments -->
+                                             Post Comments 
                                             <div class="post-comments">
                                                 <a href="#"><i class="fa fa-comment-o" aria-hidden="true"></i> 12</a>
                                             </div>
-                                            <!-- Post Share -->
+                                             Post Share 
                                             <div class="post-share">
                                                 <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>
+                                    <?PHP while ($row= mysqli_fetch_array($data)){ ?>
+                                    <div class="">
                                     <a href="#">
-                                        <h2 class="post-headline">Boil The Kettle And Make A Cup Of Tea Folks, This Is Going To Be A Big One!</h2>
+                                        <h2 class="post-headline card-title" style="font-family: verdana;font-size: 26px"><?PHP echo $row['name'] ?></h2>
                                     </a>
-                                    <p>Tiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodoconsequat.</p>
-                                    <a href="#" class="read-more">Continue Reading..</a>
+                                    <div class="post-author">
+                                        <a href="http://facebook.com/zahid.cse07" style="font-family: verdana" target="blank">By Zahid Hasan</a>
+                                            </div>
+                                   
+                                        <p class="card-text" style="font-family: verdana"><?PHP echo $row['description'] ?></p>
+                                   </div>
+                                    <br>
+                                    
+                                    <?PHP } ?>
                                 </div>
                             </div>
                         </div>
 
 
 
-                       <?PHP include('single_post.php') ?>
-
-                        <!-- ******* List Blog Area Start ******* -->
-
-                       <?PHP include('single_list_post.php') ?>
-
-
-
-
 
                     </div>
                 </div>
+                
+                
 
                 <!-- ****** Blog Sidebar ****** -->
                 <div class="col-12 col-sm-8 col-md-6 col-lg-4">
@@ -87,22 +116,11 @@
                         
 
                         <!-- Single Widget Area -->
-                        <?PHP include './popular_post.php'; ?>
+                        <?PHP include './programming_category_list.php'; ?>
 
                         <!-- Single Widget Area -->
                         <div class="single-widget-area add-widget text-center">
-                            <div class="add-widget-area">
-                                <img src="img/sidebar-img/6.jpg" alt="">
-                                <div class="add-text">
-                                    <div class="unity-table">
-                                        <div class="unity-table-cell">
-                                            <h2>Cooking Book</h2>
-                                            <p>Buy Book Online Now!</p>
-                                            <a href="#" class="add-btn">Buy Now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
 
                         <!-- Single Widget Area -->
@@ -123,12 +141,9 @@
             </div>
         </div>
     </section>
-    <!-- ****** Blog Area End ****** -->
 
-    <!-- ****** Instagram Area Start ****** -->
-   <?php include './footer_slider.php'; ?>
-    <!-- ****** Our Creative Portfolio Area End ****** -->
-
+    
+    <?PHP include './footer_slider.php'; ?>
     <!-- ****** Footer Social Icon Area Start ****** -->
     <?PHP include('footer.php') ?>
 

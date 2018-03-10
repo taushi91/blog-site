@@ -12,9 +12,9 @@ $data=$popular_post->view_post_latest();
                                 
                              ?>
                             <div class="single-populer-post d-flex">
-                                <a href="post_details.php?id=<?PHP echo $row['id'] ?>"> <img src="admin/upload_image/<?php echo $row['image'] ?>" alt="7unity" ></a>
+                                <a href="post_details?id=<?PHP echo $row['id'] ?>"> <img src="admin/upload_image/<?php echo $row['image'] ?>" alt="7unity" ></a>
                                 <div class="post-content">
-                                    <a href="#">
+                                    <a href="post_details?id=<?PHP echo $row['id'] ?>">
                                         <h6><?php echo $row['title'] ?></h6>
                                     </a>
                                     <p><?php echo $row['date'] ?></p>

@@ -65,7 +65,7 @@
                     <div class="single-post wow fadeInUp" data-wow-delay="0.1s">
                         <!-- Post Thumb -->
                         <div class="post-thumb">
-                            <a href="post_details.php?id=<?PHP echo $row['id'] ?>"> <img src="admin/upload_image/<?PHP echo $row['image'] ?>" alt="" height="230px"></a>
+                            <a href="post_details?id=<?PHP echo $row['id'] ?>"> <img src="admin/upload_image/<?PHP echo $row['image'] ?>" alt="" height="230px"></a>
                         </div>
                         <!-- Post Content -->
                         <div class="post-content">
@@ -96,7 +96,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a href="post_details.php?id=<?PHP echo $row['id'] ?>">
+                            <a href="post_details?id=<?PHP echo $row['id'] ?>">
                                 <h4 class="post-headline"><?PHP echo $row['title'] ?></h4>
                             </a>
                         </div>
